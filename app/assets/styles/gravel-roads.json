@@ -1,0 +1,42 @@
+{
+  "version": 8,
+  "name": "Gravel Roads",
+  "sources": {
+    "gravel-roads": {
+      "type": "vector",
+      "url": ""
+    }
+  },
+  "layers": [
+    {
+      "id": "gravel-roads-line",
+      "type": "line",
+      "source": "gravel-roads",
+      "source-layer": "gravel_roads",
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "surface"],
+          "gravel", "#D4782F",
+          "dirt", "#8B6914",
+          "unpaved", "#C4883E",
+          "#888888"
+        ],
+        "line-width": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          7, 1,
+          10, 2,
+          13, 3,
+          16, 5
+        ],
+        "line-opacity": 0.85
+      },
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      }
+    }
+  ]
+}

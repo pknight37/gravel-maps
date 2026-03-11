@@ -16,7 +16,39 @@ Thumbs.db
 # Node
 node_modules/
 npm-debug.log*
+yarn-debug.*
+yarn-error.*
+package-lock.json
 
 # Build output
 dist/
 build/
+
+# Expo
+.expo/
+web-build/
+expo-env.d.ts
+
+# Native builds
+ios/
+android/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+.kotlin/
+
+# Metro
+.metro-health-check*
+
+# TypeScript
+*.tsbuildinfo
+
+# Pipeline data (large files, generated)
+pipeline/data/
+
+# Tile files
+*.mbtiles
+*.pmtiles

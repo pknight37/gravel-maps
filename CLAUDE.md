@@ -4,15 +4,57 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Gravel Maps is a mapping application for discovering and sharing gravel biking routes. Technology stack and architecture TBD — this section will be updated as decisions are made.
+Gravel Maps is a cross-platform (Android + iOS) mapping app for discovering gravel and unpaved roads in Colorado. Built with Expo (React Native), MapLibre for maps, and a TypeScript data pipeline that processes public road data from USFS, BLM, and OpenStreetMap.
+
+### Architecture
+
+- **`app/`** — Expo React Native app with Expo Router (file-based routing) and MapLibre GL
+- **`pipeline/`** — Node.js data pipeline (TypeScript) that fetches, normalizes, and tiles gravel road data
+
+### Key Libraries
+
+- `expo` ~55, `expo-router` ~55, `react-native` 0.83
+- `@maplibre/maplibre-react-native` — Map rendering (BSD, free)
+- `expo-location` — User location
+- `zod` — Schema validation (pipeline)
+- System tools: `tippecanoe`, `gdal` (ogr2ogr), `osmium-tool`
 
 ## Development
 
-_To be updated once the tech stack is chosen._
+```bash
+# Install all dependencies (from repo root)
+npm install
+
+# Start Expo dev server
+cd app && npx expo start
+
+# Run app tests
+cd app && npm test
+
+# Run data pipeline (all sources)
+cd pipeline && npm run pipeline
+
+# Run data pipeline (USFS only)
+cd pipeline && npm run pipeline:usfs
+
+# Type check
+cd app && npm run lint
+cd pipeline && npm run lint
+```
+
+### System Dependencies
+
+```bash
+brew install tippecanoe gdal osmium-tool
+```
 
 ## Conventions
 
-_To be updated as the project structure takes shape._
+- TypeScript strict mode everywhere
+- Expo Router file-based routing (`app/app/` directory)
+- Common GravelRoad schema (defined in `pipeline/src/schema.ts`) used across all data sources
+- 8px spacing system in UI (see UI/UX Design Principles below)
+- Surface colors: orange (#D4782F) for gravel, brown (#8B6914) for dirt, tan (#C4883E) for unpaved, gray (#888888) for unknown
 
 ## Test-Driven Development (Canon TDD)
 

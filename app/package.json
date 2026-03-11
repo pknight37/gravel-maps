@@ -1,0 +1,44 @@
+{
+  "name": "gravel-maps-app",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "tsc --noEmit"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg|@maplibre/maplibre-react-native)"
+    ],
+    "setupFilesAfterSetup": [
+      "./__tests__/setup.ts"
+    ]
+  },
+  "dependencies": {
+    "@maplibre/maplibre-react-native": "^10.4.2",
+    "expo": "~55.0.5",
+    "expo-constants": "~55.0.7",
+    "expo-linking": "~55.0.7",
+    "expo-location": "~55.1.2",
+    "expo-router": "~55.0.4",
+    "expo-status-bar": "~55.0.4",
+    "react": "^19.2.4",
+    "react-native": "0.83.2",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-screens": "~4.23.0"
+  },
+  "devDependencies": {
+    "@testing-library/react-native": "^13.3.3",
+    "@types/jest": "^30.0.0",
+    "@types/react": "~19.2.2",
+    "jest-expo": "~55.0.9",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}

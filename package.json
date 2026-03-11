@@ -1,0 +1,15 @@
+{
+  "name": "gravel-maps",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "app",
+    "pipeline"
+  ],
+  "scripts": {
+    "app:start": "npm run start --workspace=app",
+    "app:test": "npm run test --workspace=app",
+    "pipeline": "npm run pipeline --workspace=pipeline",
+    "pipeline:test": "npm run test --workspace=pipeline"
+  }
+}

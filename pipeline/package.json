@@ -1,0 +1,25 @@
+{
+  "name": "gravel-maps-pipeline",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "pipeline": "tsx src/index.ts",
+    "pipeline:usfs": "tsx src/index.ts --source usfs",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.14",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.2.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.9.2"
+  }
+}
